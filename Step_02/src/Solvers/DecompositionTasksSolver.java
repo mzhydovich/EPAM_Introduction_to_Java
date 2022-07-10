@@ -47,6 +47,8 @@ public class DecompositionTasksSolver {
         for (int i = 0; i < points.length; ++i) {
             for (int j = i+1; j < points.length; ++j) {
                 if (calc_distance(points[i], points[j]) > dist) {
+                    a[0] = points[i];
+                    a[1] = points[j];
                     dist = calc_distance(points[i], points[j]);
                 }
             }
@@ -177,7 +179,7 @@ public class DecompositionTasksSolver {
     }
 
 
-    public static boolean is_prime(int x) {
+    private static boolean is_prime(int x) {
         for (int i = 2; i <= Math.sqrt(x); ++i) {
             if (x % i == 0) {
                 return false;
@@ -188,37 +190,21 @@ public class DecompositionTasksSolver {
     }
 
     public static void is_prime_twins(int n) {
-        for (int i = n; i <= 2*n; i += 2) {
+        for (int i = n; i <= 2 * n; i += 2) {
             if (i % 2 == 0) {
                 i++;
             }
 
             if (is_prime(i)) {
-                if (is_prime(i+2)) {
-                    System.out.println(i + " " + i+2);
+                if (is_prime(i + 2)) {
+                    System.out.println(i + " " + (i + 2));
                 }
             }
         }
     }
 
-    static public int[] num_in_array(int x) {
-        int[] a = new int[num_length(x)];
-        if (x == 0) {
-            a[0] = 0;
-            return a;
-        }
-        int counter = 0;
-        while (x > 0) {
-            a[counter] = x % 10;
-            x /= 10;
-            counter++;
-        }
-
-        return a;
-    }
-
-    static public boolean is_armstrong_num(int x) {
-        int[] a = num_in_array(x);
+    static private boolean is_armstrong_num(int x) {
+        int[] a = num_to_array(x);
         int sum = 0;
         for (int j : a) {
             sum += j;
@@ -241,5 +227,5 @@ public class DecompositionTasksSolver {
 
         return a;
     }
-    
+
 }

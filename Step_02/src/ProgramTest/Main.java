@@ -1,9 +1,12 @@
 package ProgramTest;
 
+import Solvers.DecompositionTasksSolver;
 import Solvers.OneDimensionalArraysTasksSolver;
+import Solvers.SortTasksSolver;
 import Solvers.TwoDimensionalArraysTasksSolver;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -143,6 +146,40 @@ public class Main {
             }
             System.out.println();
         }
+
+        System.out.println("---------------Decomposition Tasks---------------");
+
+        System.out.println("Task01: " + DecompositionTasksSolver.lcm(2, 3));
+        System.out.println("Task02: " + DecompositionTasksSolver.gcd_for_4_numbers(2, 4, 8, 10));
+        System.out.println("Task03: " + DecompositionTasksSolver.right_hexagon_square(5));
+
+        int[][] points = {{1, 2}, {2, 3}, {0, 0}};
+        System.out.println("Task04: " + Arrays.deepToString(DecompositionTasksSolver.max_distance(points)));
+
+        System.out.println("Task05: ");
+        DecompositionTasksSolver.find_second_max(new int[]{1, 2, 3, 4});
+
+        System.out.println("Task06: " + DecompositionTasksSolver.is_mutual_simple_for_three_numbers(3, 5, 7));
+        System.out.println("Task07: " + DecompositionTasksSolver.sum_of_factorials());
+        System.out.println("Task08: " + Arrays.toString(DecompositionTasksSolver.subarray_sum(new int[]{1, 2, 3, 4, 5}, 2, 4)));
+        System.out.println("Task09: " + DecompositionTasksSolver.calc_quadrilateral_square(1, 2, 3, 4));
+        System.out.println("Task10: " + Arrays.toString(DecompositionTasksSolver.num_to_array(12345)));
+        System.out.println("Task11: " + DecompositionTasksSolver.which_longer(123, 1234));
+
+        System.out.println("Task12: ");
+        DecompositionTasksSolver.is_prime_twins(10);
+
+        System.out.println("Task13: " + DecompositionTasksSolver.armstrong_nums(15));
+
+        System.out.println("---------------Sort Tasks---------------");
+
+        System.out.println("Task01: " + Arrays.toString(SortTasksSolver.solve_01(new int[]{1, 2, 3, 4, 5}, new int[]{6, 7, 8, 9, 10}, 5)));
+        System.out.println("Task02: " + SortTasksSolver.solve_02(new int[]{1, 2, 3, 4, 5}, new int[]{6, 7, 8, 9, 10}));
+        System.out.println("Task03: " + Arrays.toString(SortTasksSolver.solve_03(new int[]{5, 4, 3, 2, 1})));
+        System.out.println("Task04: " + Arrays.toString(SortTasksSolver.solve_04(new int[]{5, 4, 3, 2, 1})));
+        System.out.println("Task05: " + Arrays.toString(SortTasksSolver.solve_05(new int[]{5, 4, 3, 2, 1})));
+        System.out.println("Task06: " + Arrays.toString(SortTasksSolver.solve_06(new int[]{5, 4, 3, 2, 1})));
+        System.out.println("Task07: " + SortTasksSolver.solve_07(List.of(1, 2, 4, 6), List.of(3, 5)));
 
     }
 
